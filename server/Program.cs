@@ -12,7 +12,18 @@ builder.WebHost.ConfigureKestrel(o =>
 
 builder.Services.AddGrpc();
 
+builder.Services.AddCors(o => o.AddDefaultPolicy(p => p
+    .WithOrigins("http://localhost:5173")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .WithExposedHeaders("Grpc-Status", "Grpc-Message", "Grpc-Encoding", "Grpc-Accept-Encoding")));
+
 var app = builder.Build();
+
+app.UseRouting();
+app.UseCors();
+app.UseGrpcWeb(new GrpcWebOptions { DefaultEnabled = true });
+
 app.MapGrpcService<GreeterService>();
 
 // you can delete this later

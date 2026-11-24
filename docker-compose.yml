@@ -8,10 +8,12 @@ services:
       - DOTNET_USE_POLLING_FILE_WATCHER=true
     volumes:
       - ./server:/src
+      - ./proto:/proto
       - /src/bin
       - /src/obj
       - nuget:/root/.nuget/packages
     ports:
+      - "8080:8080"
       - "8081:8081"
 
   web:
@@ -25,6 +27,22 @@ services:
       - "5173:5173"
     depends_on:
       - server
+
+  # Runs once and exits: docker compose run --rm codegen
+  codegen:
+    build: ./codegen
+    profiles: ["tools"]
+    volumes:
+      - ./proto:/proto:ro
+      - ./web/src/gen:/out
+
+  # Stays running; regenerates the TS client whenever a .proto changes.
+  codegen-watch:
+    build: ./codegen
+    command: ["sh", "/codegen/watch.sh"]
+    volumes:
+      - ./proto:/proto:ro
+      - ./web/src/gen:/out
 
 volumes:
   nuget:

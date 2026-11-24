@@ -1,0 +1,9 @@
+{
+  "name": "codegen",
+  "private": true,
+  "version": "0.0.0",
+  "devDependencies": {
+    "@bufbuild/buf": "^1.75.0",
+    "@bufbuild/protoc-gen-es": "^2.17.0"
+  }
+}

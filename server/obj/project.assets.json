@@ -68,6 +68,22 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Grpc.AspNetCore.Web/2.64.0": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Grpc.AspNetCore.Web.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Grpc.AspNetCore.Web.dll": {
+            "related": ".pdb"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Grpc.Core.Api/2.64.0": {
         "type": "package",
         "compile": {
@@ -216,6 +232,27 @@
         "packageIcon.png"
       ]
     },
+    "Grpc.AspNetCore.Web/2.64.0": {
+      "sha512": "d2mhlG09l+kP9RLgkMbluSbr/SATbp5A2JK4D1yoGDqRSR9qS6NPaIjqoCqTka4s1EjgA8XSps7ueRmHZmB7Tw==",
+      "type": "package",
+      "path": "grpc.aspnetcore.web/2.64.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "grpc.aspnetcore.web.2.64.0.nupkg.sha512",
+        "grpc.aspnetcore.web.nuspec",
+        "lib/net6.0/Grpc.AspNetCore.Web.dll",
+        "lib/net6.0/Grpc.AspNetCore.Web.pdb",
+        "lib/net7.0/Grpc.AspNetCore.Web.dll",
+        "lib/net7.0/Grpc.AspNetCore.Web.pdb",
+        "lib/net8.0/Grpc.AspNetCore.Web.dll",
+        "lib/net8.0/Grpc.AspNetCore.Web.pdb",
+        "lib/net9.0/Grpc.AspNetCore.Web.dll",
+        "lib/net9.0/Grpc.AspNetCore.Web.pdb",
+        "packageIcon.png"
+      ]
+    },
     "Grpc.Core.Api/2.64.0": {
       "sha512": "CFwvZT56TU9D4Znz2qGz2S7XtXjo+t2DlTsa12vs+rKRwOuUI3dv/5vnh7LRgMDcumWOzR8L6IbtCYtJmcp3Rg==",
       "type": "package",
@@ -357,7 +394,8 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Grpc.AspNetCore >= 2.64.0"
+      "Grpc.AspNetCore >= 2.64.0",
+      "Grpc.AspNetCore.Web >= 2.64.0"
     ]
   },
   "packageFolders": {
@@ -366,11 +404,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/work/server/MangaServer.csproj",
+      "projectUniqueName": "/src/MangaServer.csproj",
       "projectName": "MangaServer",
-      "projectPath": "/work/server/MangaServer.csproj",
+      "projectPath": "/src/MangaServer.csproj",
       "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/work/server/obj/",
+      "outputPath": "/src/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/root/.nuget/NuGet/NuGet.Config"
@@ -406,6 +444,10 @@
         "targetAlias": "net10.0",
         "dependencies": {
           "Grpc.AspNetCore": {
+            "target": "Package",
+            "version": "[2.64.0, )"
+          },
+          "Grpc.AspNetCore.Web": {
             "target": "Package",
             "version": "[2.64.0, )"
           }

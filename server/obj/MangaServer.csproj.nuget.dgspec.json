@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/work/server/MangaServer.csproj": {}
+    "/src/MangaServer.csproj": {}
   },
   "projects": {
-    "/work/server/MangaServer.csproj": {
+    "/src/MangaServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/work/server/MangaServer.csproj",
+        "projectUniqueName": "/src/MangaServer.csproj",
         "projectName": "MangaServer",
-        "projectPath": "/work/server/MangaServer.csproj",
+        "projectPath": "/src/MangaServer.csproj",
         "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/work/server/obj/",
+        "outputPath": "/src/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/root/.nuget/NuGet/NuGet.Config"
@@ -47,6 +47,10 @@
           "targetAlias": "net10.0",
           "dependencies": {
             "Grpc.AspNetCore": {
+              "target": "Package",
+              "version": "[2.64.0, )"
+            },
+            "Grpc.AspNetCore.Web": {
               "target": "Package",
               "version": "[2.64.0, )"
             }
